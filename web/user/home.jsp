@@ -53,9 +53,6 @@
         <!--Start footer-->
         <%@ include file="masterpage/footer.jsp" %>
         <!--End footer-->
-
     </div><!--End wrapper-->
-
-
 </body>
 </html>

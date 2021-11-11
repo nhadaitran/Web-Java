@@ -51,12 +51,12 @@
                     <ul class="navbar-nav align-items-center right-nav-link">
                         <li class="nav-item">
                             <a class="nav-link fa fa-user-circle" href="user/login.jsp">
-                               Đăng nhập
+                                Đăng nhập
                             </a>                           
                         </li>
                         <li class="nav-item">
                             <a class="nav-link fa fa-plus-circle" href="user/register.jsp">
-                               Đăng ký
+                                Đăng ký
                             </a>                           
                         </li>
                     </ul>
@@ -70,36 +70,36 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                    <div class="col-lg d-flex justify-content-center">                                       
-                                        <div class="form-row col-md-2">
-                                            <select name="category" class="form-control" required>
-                                                <option value="cid" selected="selected" disabled>- - Danh Mục - -</option>
-                                                <option value="All">- - All - -</option>
-                                                <option value="Literary Fiction">Literary Fiction</option>
-                                                <option value="Mystery">Mystery</option>
-                                                <option value="Thriller">Thriller</option>
-                                                <option value="Horror">Horror</option>
-                                                <option value="Historical">Historical</option>
-                                                <option value="Romance">Romance</option>
-                                                <option value="Western">Western</option>
-                                                <option value="Science Fiction">Science Fiction</option>
-                                                <option value="Fantasy">Fantasy</option>
-                                                <option value="Magical Realism">Magical Realism</option>
-                                                <option value="Realist Literature">Realist Literature</option>
-                                            </select>
-                                        </div>
+                                <div class="col-lg d-flex justify-content-center">                                       
+                                    <div class="form-row col-md-2">
+                                        <select name="category" class="form-control" required>
+                                            <option value="cid" selected="selected" disabled>- - Danh Mục - -</option>
+                                            <option value="All">- - All - -</option>
+                                            <option value="Literary Fiction">Literary Fiction</option>
+                                            <option value="Mystery">Mystery</option>
+                                            <option value="Thriller">Thriller</option>
+                                            <option value="Horror">Horror</option>
+                                            <option value="Historical">Historical</option>
+                                            <option value="Romance">Romance</option>
+                                            <option value="Western">Western</option>
+                                            <option value="Science Fiction">Science Fiction</option>
+                                            <option value="Fantasy">Fantasy</option>
+                                            <option value="Magical Realism">Magical Realism</option>
+                                            <option value="Realist Literature">Realist Literature</option>
+                                        </select>
+                                    </div>
 
-                                        <div class="form-row col-md" >
-                                            <form class="form-row col-md">
-                                                <div class="col-md">
-                                                    <input class="form-control" type="search" placeholder="Tìm kiếm bằng tiêu đề sách hoặc tác giả...">
-                                                </div>
-                                                <div class="col-md-0">
-                                                    <button class="btn btn-light" type="submit">Tìm Kiếm</button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        
+                                    <div class="form-row col-md" >
+                                        <form class="form-row col-md">
+                                            <div class="col-md">
+                                                <input class="form-control" type="search" placeholder="Tìm kiếm bằng tiêu đề sách hoặc tác giả...">
+                                            </div>
+                                            <div class="col-md-0">
+                                                <button class="btn btn-light" type="submit">Tìm Kiếm</button>
+                                            </div>
+                                        </form>
+                                    </div>
+
                                 </div> 
                             </div>
 
@@ -116,37 +116,37 @@
                                     <tbody>
                                         <tr role="row">
                                             <td>11</td>
-                                            <td>Software Engineering</td>
+                                            <td><a href="user/bookNoLogin.jsp">Software Engineering</a></td>
                                             <td>ABCDEFF</td>
                                             <td><button class="btn btn-danger btn-sm" disabled="disable">not available</button></td>
                                         </tr>
                                         <tr role="row">
                                             <td>49</td>
-                                            <td><a href="#">Python Cookbook</a></td>
+                                            <td><a href="user/bookNoLogin.jsp">Python Cookbook</a></td>
                                             <td>ABCDEFF</td>
                                             <td><button class="btn btn-success btn-sm" disabled="disable">available</button></td>
                                         </tr>
                                         <tr role="row">
                                             <td>1</td>
-                                            <td>Machinery Handbook</td>
+                                            <td><a href="user/bookNoLogin.jsp">Machinery Handbook</a></td>
                                             <td>ABCDEFF</td>
                                             <td><button class="btn btn-danger btn-sm" disabled="disable">not available</button></td>
                                         </tr>
                                         <tr role="row">
                                             <td>20</td>
-                                            <td>Effective C++</td>
+                                            <td><a href="user/bookNoLogin.jsp">Effective C++</a></td>
                                             <td>Scott Meyers</td>
                                             <td><button class="btn btn-danger btn-sm" disabled="disable">not available</button></td>
                                         </tr>
                                         <tr role="row">
                                             <td>220</td>
-                                            <td><a href="#">Java 2</a></td>
+                                            <td><a href="user/bookNoLogin.jsp">Java 2</a></td>
                                             <td>Herbert </td>
                                             <td><button class="btn btn-success btn-sm" disabled="disable">available</button></td>
                                         </tr>
                                         <tr role="row">
                                             <td>35</td>
-                                            <td>A Brief History of Time</td>
+                                            <td><a href="user/bookNoLogin.jsp">A Brief History of Time</a></td>
                                             <td>Stephen Hawkings</td>
                                             <td><button class="btn btn-danger btn-sm" disabled="disable">not available</button></td>
                                         </tr>
@@ -171,28 +171,28 @@
                     </div>
                 </div>
             </div>
-</div>            
-      
+        </div>            
+
         <!-- End container-fluid-->
 
-    <!--End content-wrapper-->
-    <!--Start Back To Top Button-->
-    <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
-    <!--End Back To Top Button-->
+        <!--End content-wrapper-->
+        <!--Start Back To Top Button-->
+        <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
+        <!--End Back To Top Button-->
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="assets/js/jquery.min.js"></script>    
-    <script src="assets/js/bootstrap.min.js"></script>
+        <!-- Bootstrap core JavaScript-->
+        <script src="assets/js/jquery.min.js"></script>    
+        <script src="assets/js/bootstrap.min.js"></script>
 
-    <!-- simplebar js -->
-    <script src="assets/plugins/simplebar/js/simplebar.js"></script>
-    <!-- sidebar-menu js -->
-    <script src="assets/js/sidebar-menu.js"></script>
+        <!-- simplebar js -->
+        <script src="assets/plugins/simplebar/js/simplebar.js"></script>
+        <!-- sidebar-menu js -->
+        <script src="assets/js/sidebar-menu.js"></script>
 
-    <!-- Custom scripts -->
-    <script src="assets/js/app-script.js"></script>
-</div>
-<!--End wrapper-->
+        <!-- Custom scripts -->
+        <script src="assets/js/app-script.js"></script>
+    </div>
+    <!--End wrapper-->
 
 
 

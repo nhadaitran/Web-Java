@@ -115,10 +115,9 @@
                                                 </div>                                                
                                             </div>
                                             <!--/row-->
-                                        </div>
-                                        <a class="btn btn-light fa fa-long-arrow-left" href="home.jsp"><span>Quay lại</span></a>
-                                        <!--BOOK INFO-->
-
+                                            <a class="btn btn-light fa fa-long-arrow-left" href="home.jsp"><span>Quay lại</span></a>
+                                            <!--BOOK INFO-->
+                                        </div>                                                                             
 
                                         <!--RATE-->
                                         <div class="tab-pane" id="rate">
