@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 10, 2021 8:51:36 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.Admin" table="admin" catalog="libjava" optimistic-lock="version">
+        <id name="aid" type="string">
+            <column name="aid" />
+            <generator class="assigned" />
+        </id>
+        <property name="password" type="string">
+            <column name="password" not-null="true" />
+        </property>
+        <property name="fullname" type="string">
+            <column name="fullname" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" not-null="true" />
+        </property>
+        <set name="issues" table="issue" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="aid" not-null="true" />
+            </key>
+            <one-to-many class="model.Issue" />
+        </set>
+        <set name="returnses" table="returns" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="aid" not-null="true" />
+            </key>
+            <one-to-many class="model.Returns" />
+        </set>
+    </class>
+</hibernate-mapping>

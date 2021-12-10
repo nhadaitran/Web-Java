@@ -14,8 +14,7 @@
                             <select name="category" class="form-control" required>
                                 <option value="" selected="selected" disabled>- - Danh Mục - -</option>
                                 <option value="issue">Đang mượn</option>
-                                <option value="return">Đã trả</option>
-                                <option value="favorite">Yêu thích</option>
+                                <option value="return">Đã trả</option>                               
                             </select>
                         </div>
                     </div> 
@@ -32,6 +31,7 @@
                             </tr>
                         </thead>
                         <tbody>
+                           
                             <tr role="row">
                                 <td>11-02-2019</td>
                                 <td><a href="book.jsp">Software Engineering</a></td>

@@ -41,7 +41,7 @@
             </a>
         </li>
         <li>
-            <a href="index.jsp">
+            <a href="${pageContext.request.contextPath}/admin/logout">
                 <i class="zmdi zmdi-lock"></i> <span>Đăng Xuất</span>
             </a>
         </li>

@@ -20,13 +20,13 @@
                         <div class="card">
                             <div class="card-body">
                                 <ul class="nav nav-tabs nav-tabs-primary top-icon nav-justified">
-                                    <li class="nav-item">
+                                    <li class="nav-item find">
                                         <a href="javascript:void();" data-target="#find" data-toggle="pill" class="nav-link active"><i class="zmdi zmdi-bookmark-outline"></i> <span class="hidden-xs">Tìm kiếm sách</span></a>
                                     </li>
-                                    <li class="nav-item">
+                                    <li class="nav-item manage">
                                         <a href="javascript:void();" data-target="#manage" data-toggle="pill" class="nav-link"><i class="zmdi zmdi-book"></i> <span class="hidden-xs">Quản lý sách</span></a>
                                     </li>
-                                    <li class="nav-item">
+                                    <li class="nav-item info">
                                         <a href="javascript:void();" data-target="#info" data-toggle="pill" class="nav-link"><i class="zmdi zmdi-account-o"></i> <span class="hidden-xs">Cập nhật thông tin</span></a>
                                     </li>
                                 </ul>
