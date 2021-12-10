@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <display-name>Website Thư viện sách</display-name>
+    <servlet>
+        <servlet-name>LoginController</servlet-name>
+        <servlet-class>controller.user.LoginController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginController</servlet-name>
+        <url-pattern>/user/login</url-pattern>
+    </servlet-mapping>
+    
+        <servlet>
+        <servlet-name>LogoutController</servlet-name>
+        <servlet-class>controller.user.LogoutController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutController</servlet-name>
+        <url-pattern>/user/logout</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>AdminLoginController</servlet-name>
+        <servlet-class>controller.admin.AdminLoginController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminLoginController</servlet-name>
+        <url-pattern>/admin/index</url-pattern>
+    </servlet-mapping>
+    
+        <servlet>
+        <servlet-name>AdminLogoutController</servlet-name>
+        <servlet-class>controller.admin.AdminLogoutController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminLogoutController</servlet-name>
+        <url-pattern>/admin/logout</url-pattern>
+    </servlet-mapping>
+    
+            <servlet>
+        <servlet-name>BooksController</servlet-name>
+        <servlet-class>controller.user.BooksController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BooksController</servlet-name>
+        <url-pattern>/user/home</url-pattern>
+    </servlet-mapping>
+    
+    <session-config>
+        <session-timeout>
+      30
+    </session-timeout>
+    </session-config>
+</web-app>
