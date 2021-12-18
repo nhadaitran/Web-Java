@@ -76,7 +76,6 @@ public class BooksController extends HttpServlet {
     HttpSession session = request.getSession(true);
     String sid = session.getAttribute("sid").toString();
     String cid = request.getParameter("catBook");
-    String mng = request.getParameter("manageBook");        
     List<Books> listBook = bookDao.getAll();
     List<Books> listBookI = bookDao.getBookIssue(Integer.parseInt(sid));
     List<Books> listBookR = bookDao.getBookReturns(Integer.parseInt(sid));
@@ -84,25 +83,14 @@ public class BooksController extends HttpServlet {
       listBook = bookDao.getByCategory(Integer.parseInt(cid));
       request.setAttribute("idCat", cid);
     }
-    if(mng !=null){
-      request.setAttribute("mng",mng);
-    }
     List<Category> listCat = catDao.getAll();
-    
-        Date date = new Date();
-    LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-    int year = localDate.getYear();
-    int month = localDate.getMonthValue()+10000;
-    int day = localDate.getDayOfMonth()*1000000;
-    int dateR = day + month + year;
-    request.setAttribute("date", dateR);
     request.setAttribute("listBookI", listBookI);
     request.setAttribute("listBookR", listBookR);
     request.setAttribute("listBook", listBook);
     request.setAttribute("listCat", listCat);
     request.getRequestDispatcher("/user/home.jsp").forward(request, response);
   }
-  
+
 //    private void updateBook(HttpServletRequest request, HttpServletResponse response)
 //          throws SQLException, IOException {
 //    int id = Integer.parseInt(request.getParameter("id"));
@@ -114,5 +102,4 @@ public class BooksController extends HttpServlet {
 //    userDao.updateUser(user);
 //    response.sendRedirect("list");
 //  }
-
 }

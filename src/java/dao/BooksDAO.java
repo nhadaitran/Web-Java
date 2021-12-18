@@ -33,7 +33,7 @@ public class BooksDAO {
     Transaction transaction = session.beginTransaction();
     session.update(book);
     transaction.commit();
-    session.close();    
+    session.close();
   }
 
   public void deleteBooks(Books book) {
@@ -43,14 +43,23 @@ public class BooksDAO {
     transaction.commit();
     session.close();
   }
-  
-    public void updateBooksI(int id) {
+
+  public void updateBooksI(int id) {
     Session session = HibernateUtil.getSessionFactory().openSession();
     Transaction transaction = session.beginTransaction();
     Query query = session.createQuery("UPDATE Books Set status = 0 WHERE id = :id").setParameter("id", id);
     query.executeUpdate();
     transaction.commit();
-    session.close();    
+    session.close();
+  }
+
+  public void updateBooksR(int id) {
+    Session session = HibernateUtil.getSessionFactory().openSession();
+    Transaction transaction = session.beginTransaction();
+    Query query = session.createQuery("UPDATE Books Set status = 1 WHERE id = :id").setParameter("id", id);
+    query.executeUpdate();
+    transaction.commit();
+    session.close();
   }
 
   public List<Books> getAll() {
@@ -66,9 +75,9 @@ public class BooksDAO {
     Session session = HibernateUtil.getSessionFactory().openSession();
     Transaction transaction = session.beginTransaction();
     Books book = null;
-    book = (Books) session.get(Books.class, id);    
-    transaction.commit();    
-    return book;    
+    book = (Books) session.get(Books.class, id);
+    transaction.commit();
+    return book;
   }
 
   public List<Books> getBookReturns(int sid) {

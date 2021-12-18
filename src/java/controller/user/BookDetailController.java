@@ -54,9 +54,9 @@ public class BookDetailController extends HttpServlet {
 
     try {
       switch (action) {
-//        case "/issue":
-//          updateBookI(request, response);
-//          break;
+        case "/LibSystem/book/issue":
+          updateBookI(request, response);
+          break;
         case "/LibSystem/book/return":
           updateBookR(request, response);
           break;
@@ -78,17 +78,29 @@ public class BookDetailController extends HttpServlet {
     Date date = new Date();
     LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
     int year = localDate.getYear();
-    int month = localDate.getMonthValue()+10000;
-    int day = localDate.getDayOfMonth()*1000000;
+    int month = localDate.getMonthValue() * 10000;
+    int day = localDate.getDayOfMonth() * 1000000;
     int dateR = day + month + year;
     returnDao.saveReturn(Integer.parseInt(iis), Integer.parseInt(sid), dateR);
     bookDao.updateBooksI(Integer.parseInt(id));
     issueDao.updateIssues(Integer.parseInt(iis));
-//    Books book = bookDao.getBook(Integer.parseInt(id));
-//    request.setAttribute("detail", book);
-//    RequestDispatcher rd = request.getRequestDispatcher("/user/book.jsp");
-//    rd.forward(request, response);
-      response.sendRedirect(request.getContextPath() + "/home");
+    response.sendRedirect(request.getContextPath() + "/home");
+  }
+
+  private void updateBookI(HttpServletRequest request, HttpServletResponse response)
+          throws SQLException, IOException, ServletException {
+    HttpSession session = request.getSession(true);
+    String sid = session.getAttribute("sid").toString();
+    String id = request.getParameter("id");
+    Date date = new Date();
+    LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+    int year = localDate.getYear();
+    int month = localDate.getMonthValue() * 10000;
+    int day = localDate.getDayOfMonth() * 1000000;
+    int dateI = day + month + year;
+    issueDao.saveIssue(Integer.parseInt(id), Integer.parseInt(sid), dateI);
+    bookDao.updateBooksR(Integer.parseInt(id));
+    response.sendRedirect(request.getContextPath() + "/home");
   }
 
   private void bookDetail(HttpServletRequest request, HttpServletResponse response)

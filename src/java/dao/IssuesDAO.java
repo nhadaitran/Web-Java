@@ -16,11 +16,19 @@ import util.HibernateUtil;
  * @author DELL
  */
 public class IssuesDAO {
-   public void saveIssue(Issue issue) {
-    Transaction transaction = null;
-    Session session = HibernateUtil.openSesstion();
-    transaction = session.beginTransaction();
-    session.save(issue);
+
+  public void saveIssue(int bid, int sid, int date) {
+    Session session = HibernateUtil.getSessionFactory().openSession();
+    Transaction transaction = session.beginTransaction();
+    String admin = "admin";
+    Query query = session.createSQLQuery("INSERT INTO Issue (id, sid, bid, aid, date, status) VALUES ( ?, ?, ?, ?, ?, ?)")
+            .setParameter(0, null)
+            .setParameter(1, sid)
+            .setParameter(2, bid)
+            .setParameter(3, admin)
+            .setParameter(4, date)
+            .setParameter(5, 0);
+    query.executeUpdate();
     transaction.commit();
     session.close();
   }
@@ -31,7 +39,7 @@ public class IssuesDAO {
     Query query = session.createQuery("UPDATE Issue Set status = 1 WHERE id = :id").setParameter("id", id);
     query.executeUpdate();
     transaction.commit();
-    session.close(); 
+    session.close();
   }
 
 }

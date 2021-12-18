@@ -50,8 +50,7 @@
                     <div class="col-md-4">
                       <a class=" btn btn-light fa fa-long-arrow-left" href="${pageContext.request.contextPath}/home"><span>Quay lại</span></a>
                       <c:if test="${detail.status==0}">
-                      <a class="btn btn-success fa fa-heart-o" href="#"></a>
-                      <a class="btn btn-primary fa fa-check" href="#"></a>                                                    
+                      <a class="btn btn-primary fa fa-check" href="${pageContext.request.contextPath}/book/issue?id=${detail.id}">Mượn sách</a>                                                    
                       <a class="btn btn-danger fa fa-flag" href="#"></a>
                       </c:if>
                       <c:if test="${detail.status==1}">
