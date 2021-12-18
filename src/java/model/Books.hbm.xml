@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Dec 10, 2021 8:51:36 AM by Hibernate Tools 4.3.1 -->
+<!-- Generated Dec 18, 2021 12:55:09 AM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="model.Books" table="books" catalog="libjava" optimistic-lock="version">
         <id name="id" type="java.lang.Integer">
@@ -21,7 +21,7 @@
             <column name="status" not-null="true" />
         </property>
         <property name="description" type="string">
-            <column name="description" />
+            <column name="description" length="65535" />
         </property>
         <property name="image" type="string">
             <column name="image" />

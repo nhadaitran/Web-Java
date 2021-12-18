@@ -1,5 +1,5 @@
 package model;
-// Generated Dec 10, 2021 8:51:35 AM by Hibernate Tools 4.3.1
+// Generated Dec 18, 2021 12:55:07 AM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -18,6 +18,7 @@ public class Students  implements java.io.Serializable {
      private int phone;
      private Set requests = new HashSet(0);
      private Set issues = new HashSet(0);
+     private Set returnses = new HashSet(0);
 
     public Students() {
     }
@@ -29,13 +30,14 @@ public class Students  implements java.io.Serializable {
         this.email = email;
         this.phone = phone;
     }
-    public Students(String fullname, String password, String email, int phone, Set requests, Set issues) {
+    public Students(String fullname, String password, String email, int phone, Set requests, Set issues, Set returnses) {
        this.fullname = fullname;
        this.password = password;
        this.email = email;
        this.phone = phone;
        this.requests = requests;
        this.issues = issues;
+       this.returnses = returnses;
     }
    
     public Integer getId() {
@@ -86,6 +88,13 @@ public class Students  implements java.io.Serializable {
     
     public void setIssues(Set issues) {
         this.issues = issues;
+    }
+    public Set getReturnses() {
+        return this.returnses;
+    }
+    
+    public void setReturnses(Set returnses) {
+        this.returnses = returnses;
     }
 
 

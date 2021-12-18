@@ -9,7 +9,7 @@
 <%
   session = request.getSession(false);
   if (session.getAttribute("email") == null) {
-    response.sendRedirect("login.jsp");
+    response.sendRedirect(request.getContextPath() +  "/user/login.jsp");
   }
 %>
 <!--Start topbar header-->
@@ -47,7 +47,7 @@
           <li class="dropdown-divider"></li>
           <li class="dropdown-item"><i class="icon-settings mr-2"></i> Cài Đặt</li>
           <li class="dropdown-divider"></li>
-          <li class="dropdown-item"><a href="${pageContext.request.contextPath}/user/logout"><i class="icon-power mr-2"></i> Đăng Xuất</a></li>
+          <li class="dropdown-item"><a href="${pageContext.request.contextPath}/logout"><i class="icon-power mr-2"></i> Đăng Xuất</a></li>
         </ul>
       </li>
     </ul>

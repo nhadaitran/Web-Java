@@ -41,12 +41,12 @@ Contributor(s):
 -->
 <hibernate-reverse-engineering>
   <schema-selection match-catalog="libjava"/>
-  <table-filter match-name="admin"/>
   <table-filter match-name="publisher"/>
   <table-filter match-name="students"/>
   <table-filter match-name="category"/>
-  <table-filter match-name="returns"/>
   <table-filter match-name="request"/>
-  <table-filter match-name="issue"/>
   <table-filter match-name="books"/>
+  <table-filter match-name="returns"/>
+  <table-filter match-name="issue"/>
+  <table-filter match-name="admin"/>
 </hibernate-reverse-engineering>

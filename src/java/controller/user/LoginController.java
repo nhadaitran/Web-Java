@@ -101,7 +101,8 @@ public class LoginController extends HttpServlet {
       HttpSession session = request.getSession(true);
       session.setAttribute("name", loginDao.validate(email, password).getFullname());
       session.setAttribute("email", loginDao.validate(email, password).getEmail());
-      response.sendRedirect(request.getContextPath() + "/user/home"); 
+      session.setAttribute("sid", loginDao.validate(email, password).getId());
+      response.sendRedirect(request.getContextPath() + "/home"); 
     } else {
       request.setAttribute("error", "Tài khoản đăng nhập hoặc mật khẩu sai !!!");
       RequestDispatcher rd = request.getRequestDispatcher("/user/login.jsp");

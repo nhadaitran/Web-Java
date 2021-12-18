@@ -1,5 +1,5 @@
 package model;
-// Generated Dec 10, 2021 8:51:35 AM by Hibernate Tools 4.3.1
+// Generated Dec 18, 2021 12:55:07 AM by Hibernate Tools 4.3.1
 
 
 
@@ -12,14 +12,16 @@ public class Returns  implements java.io.Serializable {
      private Integer id;
      private Admin admin;
      private Issue issue;
+     private Students students;
      private int date;
 
     public Returns() {
     }
 
-    public Returns(Admin admin, Issue issue, int date) {
+    public Returns(Admin admin, Issue issue, Students students, int date) {
        this.admin = admin;
        this.issue = issue;
+       this.students = students;
        this.date = date;
     }
    
@@ -43,6 +45,13 @@ public class Returns  implements java.io.Serializable {
     
     public void setIssue(Issue issue) {
         this.issue = issue;
+    }
+    public Students getStudents() {
+        return this.students;
+    }
+    
+    public void setStudents(Students students) {
+        this.students = students;
     }
     public int getDate() {
         return this.date;

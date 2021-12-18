@@ -26,7 +26,7 @@
             <p style="color:red; display:block">
               ${error}
             </p>
-            <form method="post" action="${pageContext.request.contextPath}/user/login">
+            <form method="post" action="${pageContext.request.contextPath}/login">
               <div class="form-group">
                 <label for="inputEmail" class="sr-only">Email:</label>
                 <div class="position-relative has-icon-right">

@@ -1,5 +1,5 @@
 package model;
-// Generated Dec 10, 2021 8:51:35 AM by Hibernate Tools 4.3.1
+// Generated Dec 18, 2021 12:55:07 AM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -16,23 +16,26 @@ public class Issue  implements java.io.Serializable {
      private Books books;
      private Students students;
      private int date;
+     private int status;
      private Set returnses = new HashSet(0);
 
     public Issue() {
     }
 
 	
-    public Issue(Admin admin, Books books, Students students, int date) {
+    public Issue(Admin admin, Books books, Students students, int date, int status) {
         this.admin = admin;
         this.books = books;
         this.students = students;
         this.date = date;
+        this.status = status;
     }
-    public Issue(Admin admin, Books books, Students students, int date, Set returnses) {
+    public Issue(Admin admin, Books books, Students students, int date, int status, Set returnses) {
        this.admin = admin;
        this.books = books;
        this.students = students;
        this.date = date;
+       this.status = status;
        this.returnses = returnses;
     }
    
@@ -70,6 +73,13 @@ public class Issue  implements java.io.Serializable {
     
     public void setDate(int date) {
         this.date = date;
+    }
+    public int getStatus() {
+        return this.status;
+    }
+    
+    public void setStatus(int status) {
+        this.status = status;
     }
     public Set getReturnses() {
         return this.returnses;

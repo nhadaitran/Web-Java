@@ -4,6 +4,8 @@
     Author     : DELL
 --%>
 
+<%@page import="model.Books"%>
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <div class="tab-pane active" id="find">
   <div class="container-fluid">
@@ -17,126 +19,103 @@
                 + Yêu Cầu Sách
               </button>
               <div class="form-row col-md-2">
-                <select name="category" class="form-control" required>
-                  <option value="cid" selected="selected" disabled>- - Danh Mục - -</option>
-                  <option value="All">- - All - -</option>
-                  <option value="Literary Fiction">Literary Fiction</option>
-                  <option value="Mystery">Mystery</option>
-                  <option value="Thriller">Thriller</option>
-                  <option value="Horror">Horror</option>
-                  <option value="Historical">Historical</option>
-                  <option value="Romance">Romance</option>
-                  <option value="Western">Western</option>
-                  <option value="Science Fiction">Science Fiction</option>
-                  <option value="Fantasy">Fantasy</option>
-                  <option value="Magical Realism">Magical Realism</option>
-                  <option value="Realist Literature">Realist Literature</option>
+                <form action="${pageContext.request.contextPath}/home" method="POST">
+                  <select name="catBook" class="form-control" required onchange="this.form.submit();">
+                    <option value="0">Danh Mục</option>                       
+                    <c:forEach var="cat" items="${listCat}">
+                      <option value="${cat.cid}"
+                    <c:if test="${not empty idCat}">
+                      <c:if test="${cat.cid==idCat}">
+                        <% out.println("selected"); %>
+                      </c:if>
+                    </c:if> 
+                   >${cat.cname}</option>
+                  </c:forEach>  
                 </select>
-              </div>
-
-              <div class="form-row col-md" >
-                <form class="form-row col-md">
-                  <div class="col-md">
-                    <input class="form-control" type="search" placeholder="Tìm kiếm bằng tiêu đề sách hoặc tác giả...">
-                  </div>
-                  <div class="col-md-0">
-                    <button class="btn btn-light" type="submit">Tìm Kiếm</button>
-                  </div>
-                </form>
-              </div>
-              <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne" data-parent="#accordionOne ">
-                <form class="form-row col-md">
-                  <div class="col-md">
-                    <input class="form-control" type="text" placeholder=" Tiêu Đề Sách..." required="required">
-                  </div>
-                  <div class="col-md">
-                    <input class="form-control" type="text" placeholder=" Tác Giả..." required="required">
-                  </div>
-                  <div class="col-md-2">
-                    <button class="btn btn-light" type="submit">Gửi</button>
-                  </div>
-                </form>
-              </div>
+              </form>
             </div>
-          </div> 
-        </div>
-
-        <div class="table-responsive">
-          <table class="table table-hover">
-            <thead>
-              <tr>                      
-                <th scope="col">Mã sách</th>
-                <th scope="col">Tiêu đề sách</th>
-                <th scope="col">Thể loại</th>
-                <th scope="col">Nhà xuất bản</th>
-                <th scope="col">Trạng Thái</th>
-              </tr>
-            </thead>
-            <tbody>
-            <c:forEach var="book" items="${listBook}">
-              <tr role="row">
-                <td><c:out value="${book.id}" /></td>
-              <td><a href="book.jsp"></a<c:out value="${book.name}" /></td>
-              <td><c:out value="${book.category}" /></td>
-              <td><c:out value="${book.publisher}" /></td>
-              <td><button class="btn btn-success btn-sm" disabled="disable">available</button></td>
-              </tr>
-            </c:forEach>
-            <!--                            <tr role="row">
-                                            <td>11</td>
-                                            <td><a href="book.jsp">Software Engineering</a></td>
-                                            <td>ABCDEFF</td>
-                                            <td><button class="btn btn-danger btn-sm" disabled="disable">not available</button></td>
-                                        </tr>
-                                        <tr role="row">
-                                            <td>49</td>
-                                            <td><a href="book.jsp">Python Cookbook</a></td>
-                                            <td>ABCDEFF</td>
-                                            <td><button class="btn btn-success btn-sm" disabled="disable">available</button></td>
-                                        </tr>
-                                        <tr role="row">
-                                            <td>1</td>
-                                            <td><a href="book.jsp">Machinery Handbook</a></td>
-                                            <td>ABCDEFF</td>
-                                            <td><button class="btn btn-danger btn-sm" disabled="disable">not available</button></td>
-                                        </tr>
-                                        <tr role="row">
-                                            <td>20</td>
-                                            <td><a href="book.jsp">Effective C++</a></td>
-                                            <td>Scott Meyers</td>
-                                            <td><button class="btn btn-danger btn-sm" disabled="disable">not available</button></td>
-                                        </tr>
-                                        <tr role="row">
-                                            <td>220</td>
-                                            <td><a href="book.jsp">Java 2</a></td>
-                                            <td>Herbert </td>
-                                            <td><button class="btn btn-success btn-sm" disabled="disable">available</button></td>
-                                        </tr>
-                                        <tr role="row">
-                                            <td>35</td>
-                                            <td><a href="book.jsp">A Brief History of Time</a></td>
-                                            <td>Stephen Hawkings</td>
-                                            <td><button class="btn btn-danger btn-sm" disabled="disable">not available</button></td>
-                                        </tr>-->
-            </tbody>
-          </table>
-
-        </div>
-        <nav class="mt-3">
-          <ul class="pagination justify-content-center">
-            <li class="page-item">
-              <a class="page-link" href="#" tabindex="-1">Previous</a>
-            </li>
-            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a> </li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-              <a class="page-link" href="#">Next</a>
-            </li>
-          </ul>
-        </nav>
+            <div class="form-row col-md" >
+              <form class="form-row col-md">
+                <div class="col-md">
+                  <input class="form-control" type="search" placeholder="Tìm kiếm bằng tiêu đề sách hoặc tác giả...">
+                </div>
+                <div class="col-md-0">
+                  <button class="btn btn-light" type="submit">Tìm Kiếm</button>
+                </div>
+              </form>
+            </div>
+            <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne" data-parent="#accordionOne ">
+              <form class="form-row col-md">
+                <div class="col-md">
+                  <input class="form-control" type="text" placeholder=" Tiêu Đề Sách..." required="required">
+                </div>
+                <div class="col-md">
+                  <input class="form-control" type="text" placeholder=" Tác Giả..." required="required">
+                </div>
+                <div class="col-md-2">
+                  <button class="btn btn-light" type="submit">Gửi</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div> 
       </div>
+                  ${date}
+      <div class="table-responsive">
+        <table class="table table-hover">                    
+          <thead>
+            <tr>                      
+              <th scope="col">Mã sách</th>
+              <th scope="col">Tiêu đề sách</th>
+              <th scope="col">Thể loại</th>
+              <th scope="col">Nhà xuất bản</th>
+              <th scope="col">Trạng Thái</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          <c:forEach var="book" items="${listBook}">
+            <tr role="row">
+              <td><c:out value="${book.id}" /></td>
+            <c:if test ="${book.status==1}">
+              <td><c:out value="${book.name}" /></td>
+            </c:if>
+            <c:if test ="${book.status==0}">
+
+              <td><a href="${pageContext.request.contextPath}/book?id=${book.id}"><c:out value="${book.name}" /></a></td>
+            </c:if>        
+            <td><c:out value="${book.category.cname}" /></td>
+            <td><c:out value="${book.publisher.name}" /></td>
+            <td>
+            <c:if test ="${book.status==1}">
+              <button class="btn btn-danger btn-sm" disabled="disable">not available</button>
+            </c:if>
+            <c:if test ="${book.status==0}">
+              <button class="btn btn-success btn-sm" disabled="disable">available</button>
+            </c:if>                
+            </td>
+            </tr>
+          </c:forEach>              
+          
+          </tbody>
+        </table>
+
+      </div>
+      <nav class="mt-3">
+        <ul class="pagination justify-content-center">
+          <li class="page-item">
+            <a class="page-link" href="#" tabindex="-1">Previous</a>
+          </li>
+          <li class="page-item active"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a> </li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </nav>
     </div>
   </div>
+</div>
 </div>
 

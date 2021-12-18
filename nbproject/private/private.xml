@@ -3,17 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Program/Java/LibSystem/web/user/home.jsp</file>
             <file>file:/D:/Program/Java/LibSystem/src/java/controller/user/BooksController.java</file>
-            <file>file:/D:/Program/Java/LibSystem/src/java/dao/AdminDAO.java</file>
-            <file>file:/D:/Program/Java/LibSystem/src/java/dao/BooksDAO.java</file>
+            <file>file:/D:/Program/Java/LibSystem/src/java/controller/user/BookDetailController.java</file>
+            <file>file:/D:/Program/Java/LibSystem/web/user/book.jsp</file>
             <file>file:/D:/Program/Java/LibSystem/web/user/masterpage/findbook.jsp</file>
+            <file>file:/D:/Program/Java/LibSystem/src/java/dao/BooksDAO.java</file>
             <file>file:/D:/Program/Java/LibSystem/src/java/controller/user/LoginController.java</file>
-            <file>file:/D:/Program/Java/LibSystem/web/user/masterpage/footer.jsp</file>
-            <file>file:/D:/Program/Java/LibSystem/src/java/dao/StudentsDAO.java</file>
-            <file>file:/D:/Program/Java/LibSystem/web/WEB-INF/web.xml</file>
             <file>file:/D:/Program/Java/LibSystem/web/user/masterpage/managebook.jsp</file>
-            <file>file:/D:/Program/Java/LibSystem/web/user/login.jsp</file>
         </group>
     </open-files>
 </project-private>

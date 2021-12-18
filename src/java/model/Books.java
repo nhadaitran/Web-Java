@@ -1,5 +1,5 @@
 package model;
-// Generated Dec 10, 2021 8:51:35 AM by Hibernate Tools 4.3.1
+// Generated Dec 18, 2021 12:55:07 AM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -24,12 +24,11 @@ public class Books  implements java.io.Serializable {
     }
 
 	
-    public Books(Category category, Publisher publisher, String name, int status, String image) {
+    public Books(Category category, Publisher publisher, String name, int status) {
         this.category = category;
         this.publisher = publisher;
         this.name = name;
         this.status = status;
-        this.image = image;
     }
     public Books(Category category, Publisher publisher, String name, int status, String description, String image, Set issues) {
        this.category = category;
