@@ -61,13 +61,13 @@
           </div>
         </div>
         <div class="card-footer text-center py-3">
-          <p class="text-warning mb-0">Bạn chưa có tài khoản? <a href="${pageContext.request.contextPath}/user/register.jsp"> Đăng Ký</a></p>
+          <p class="text-warning mb-0">Bạn chưa có tài khoản? <a href="${pageContext.request.contextPath}/register"> Đăng Ký</a></p>
         </div>
-        <div class="card-footer text-center py-3">
+<!--        <div class="card-footer text-center py-3">
           <a class="btn btn-link" href="${pageContext.request.contextPath}/admin/index.jsp"> Admin Here</a>
-        </div>
+        </div>-->
         <div class="card-footer text-center py-3">
-          <a class="btn btn-link" href="${pageContext.request.contextPath}/index.jsp"> Quay lại</a>
+          <a class="btn btn-link" href="${pageContext.request.contextPath}/"> Quay lại</a>
         </div>
       </div>
 

@@ -5,45 +5,44 @@
  */
 package controller.user;
 
+import dao.StudentsDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import model.Students;
 
 /**
  *
  * @author DELL
  */
-public class LogoutController extends HttpServlet {
+@WebServlet(name = "RegisterController", urlPatterns = {"/register"})
+public class RegisterController extends HttpServlet {
+  private StudentsDAO sDao;  
 
-  protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-          throws ServletException, IOException {
-    response.setContentType("text/html;charset=UTF-8");
-    PrintWriter out = response.getWriter();
-    try {
-      HttpSession session = request.getSession();
-      session.invalidate();
-      response.sendRedirect(request.getContextPath() + "/login");
-    } finally {
-      out.close();
-    }
+  public void init() {
+    sDao = new StudentsDAO();    
   }
 
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
           throws ServletException, IOException {
-    processRequest(request, response);
+    request.getRequestDispatcher("/user/register.jsp").forward(request, response);
   }
 
   @Override
   protected void doPost(HttpServletRequest request, HttpServletResponse response)
           throws ServletException, IOException {
-    processRequest(request, response);
+    String email = request.getParameter("email");
+    String pass = request.getParameter("password");
+    String fname = request.getParameter("fullname");
+    String phone = request.getParameter("phone");
+    Students s = new Students(fname, pass, email, Integer.parseInt(phone));
+    sDao.saveStudent(s);
+    response.sendRedirect(request.getContextPath() + "/login");
   }
 
 }

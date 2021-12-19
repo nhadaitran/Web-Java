@@ -9,7 +9,7 @@
 <%
   session = request.getSession(false);
   if (session.getAttribute("email") == null) {
-    response.sendRedirect(request.getContextPath() +  "/user/login.jsp");
+    response.sendRedirect(request.getContextPath() +  "/login");
   }
 %>
 <!--Start topbar header-->

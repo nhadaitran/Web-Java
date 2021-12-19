@@ -70,6 +70,15 @@ public class BooksDAO {
     session.beginTransaction().commit();
     return books;
   }
+  
+    public List<Books> findBooks(String sql) {     
+    List<Books> books = new ArrayList();
+    Session session = HibernateUtil.getSessionFactory().openSession();
+    Query query = session.createQuery(sql);
+    books = query.list();
+    session.beginTransaction().commit();
+    return books;
+  }
 
   public Books getBook(int id) {
     Session session = HibernateUtil.getSessionFactory().openSession();

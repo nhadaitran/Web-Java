@@ -35,9 +35,9 @@
               </form>
             </div>
             <div class="form-row col-md" >
-              <form class="form-row col-md">
+              <form class="form-row col-md" method="get" action="${pageContext.request.contextPath}/search">
                 <div class="col-md">
-                  <input class="form-control" type="search" placeholder="Tìm kiếm bằng tiêu đề sách hoặc tác giả...">
+                  <input class="form-control" name="data" value="${value}" placeholder="Tìm kiếm bằng tiêu đề sách...">
                 </div>
                 <div class="col-md-0">
                   <button class="btn btn-light" type="submit">Tìm Kiếm</button>
@@ -60,7 +60,6 @@
           </div>
         </div> 
       </div>
-                  ${date}
       <div class="table-responsive">
         <table class="table table-hover">                    
           <thead>
@@ -95,8 +94,8 @@
             </c:if>                
             </td>
             </tr>
-          </c:forEach>              
-          
+          </c:forEach>             
+         
           </tbody>
         </table>
 
