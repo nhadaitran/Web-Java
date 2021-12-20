@@ -19,27 +19,41 @@ import util.HibernateUtil;
  */
 public class BooksDAO {
 
-  public void saveBook(Books book) {
-    Transaction transaction = null;
-    Session session = HibernateUtil.openSesstion();
-    transaction = session.beginTransaction();
-    session.save(book);
+  public void saveBook(String name, int pid, int cid, String desc) {
+    Session session = HibernateUtil.getSessionFactory().openSession();
+    Transaction transaction = session.beginTransaction();
+    Query query = session.createSQLQuery("INSERT INTO Books (id, name, idpublisher, idcategory, status, description, image) VALUES ( ?, ?, ?, ?, ?, ?, ?)")
+            .setParameter(0, null)
+            .setParameter(1, name)
+            .setParameter(2, pid)
+            .setParameter(3, cid)
+            .setParameter(4, 0)
+            .setParameter(5, desc)
+            .setParameter(6, null);
+    query.executeUpdate();
     transaction.commit();
     session.close();
   }
 
-  public void updateBooks(Books book) {
+  public void updateBooks(int id, String name, int pid, int cid, String desc) {
     Session session = HibernateUtil.getSessionFactory().openSession();
     Transaction transaction = session.beginTransaction();
-    session.update(book);
+    Query query = session.createSQLQuery("Update Books set name = ?, idpublisher = ?, idcategory = ?, description = ? Where id = ?")
+            .setParameter(0, name)
+            .setParameter(1, pid)
+            .setParameter(2, cid)
+            .setParameter(3, desc)
+            .setParameter(4, id);
+    query.executeUpdate();
     transaction.commit();
     session.close();
   }
 
-  public void deleteBooks(Books book) {
+  public void deleteBooks(int id) {
     Session session = HibernateUtil.getSessionFactory().openSession();
     Transaction transaction = session.beginTransaction();
-    session.delete(book);
+    Query query = session.createQuery("DELETE FROM Books WHERE id = :id").setParameter("id", id);
+    query.executeUpdate();
     transaction.commit();
     session.close();
   }
@@ -70,8 +84,8 @@ public class BooksDAO {
     session.beginTransaction().commit();
     return books;
   }
-  
-    public List<Books> findBooks(String sql) {     
+
+  public List<Books> findBooks(String sql) {
     List<Books> books = new ArrayList();
     Session session = HibernateUtil.getSessionFactory().openSession();
     Query query = session.createQuery(sql);

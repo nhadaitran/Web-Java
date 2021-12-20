@@ -6,7 +6,9 @@
 package controller.user;
 
 import dao.BooksDAO;
+import dao.CategoriesDAO;
 import dao.IssuesDAO;
+import dao.PublishersDAO;
 import dao.ReturnDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -14,6 +16,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,6 +25,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import model.Books;
+import model.Category;
+import model.Publisher;
 
 /**
  *
@@ -34,11 +39,15 @@ public class BookDetailController extends HttpServlet {
   private BooksDAO bookDao;
   private ReturnDAO returnDao;
   private IssuesDAO issueDao;
+  private CategoriesDAO catDao;
+  private PublishersDAO pubDao;
 
   public void init() {
     bookDao = new BooksDAO();
     returnDao = new ReturnDAO();
     issueDao = new IssuesDAO();
+    catDao = new CategoriesDAO();
+    pubDao = new PublishersDAO();
   }
 
   @Override
@@ -54,6 +63,15 @@ public class BookDetailController extends HttpServlet {
 
     try {
       switch (action) {
+        case "/LibSystem/book/save":
+          updateSaveBook(request, response);
+          break;
+        case "/LibSystem/book/update":
+          updateBook(request, response);
+          break;
+        case "/LibSystem/book/delete":
+          deleteBook(request, response);
+          break;
         case "/LibSystem/book/issue":
           updateBookI(request, response);
           break;
@@ -103,6 +121,19 @@ public class BookDetailController extends HttpServlet {
     response.sendRedirect(request.getContextPath() + "/home");
   }
 
+  private void updateBook(HttpServletRequest request, HttpServletResponse response)
+          throws SQLException, IOException, ServletException {
+    String id = request.getParameter("id");
+    Books detail = bookDao.getBook(Integer.parseInt(id));
+    List<Category> listCat = catDao.getAll();
+    List<Publisher> listPub = pubDao.getAll();
+    request.setAttribute("detail", detail);
+    request.setAttribute("publishers", listPub);
+    request.setAttribute("categories", listCat);
+    RequestDispatcher rd = request.getRequestDispatcher("/user/bookUpdate.jsp");
+    rd.forward(request, response);
+  }
+
   private void bookDetail(HttpServletRequest request, HttpServletResponse response)
           throws SQLException, IOException, ServletException {
     String id = request.getParameter("id");
@@ -112,5 +143,31 @@ public class BookDetailController extends HttpServlet {
     request.setAttribute("iis", iis);
     RequestDispatcher rd = request.getRequestDispatcher("/user/book.jsp");
     rd.forward(request, response);
+  }
+
+  private void deleteBook(HttpServletRequest request, HttpServletResponse response)
+          throws SQLException, IOException, ServletException {
+    String id = request.getParameter("id");
+    bookDao.deleteBooks(Integer.parseInt(id));
+    response.sendRedirect(request.getContextPath() + "/home");
+  }
+
+  private void updateSaveBook(HttpServletRequest request, HttpServletResponse response)
+          throws SQLException, IOException {
+    response.setContentType("text/html;charset=utf-8");
+    request.setCharacterEncoding("utf-8");
+    String name = request.getParameter("name");
+    String category = request.getParameter("category");
+    String publisher = request.getParameter("publisher");
+    int cid = Integer.parseInt(category);
+    int pid = Integer.parseInt(publisher);
+    String description = request.getParameter("description");
+    if (request.getParameter("new") != null) {
+      bookDao.saveBook(name, pid, cid, description);
+    } else if (request.getParameter("update") != null) {
+      int id = Integer.parseInt(request.getParameter("update"));
+      bookDao.updateBooks(id, name, pid, cid, description);
+    }
+    response.sendRedirect(request.getContextPath() + "/home");
   }
 }

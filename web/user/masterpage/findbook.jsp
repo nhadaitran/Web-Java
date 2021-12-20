@@ -12,12 +12,7 @@
     <div class="col-lg-12">
       <div class="card">
         <div class="card-body">
-          <div class="accordion" id="accordionOne">
             <div class="col-lg d-flex justify-content-center">
-              <button class="btn btn-light mb-5" type="button" data-toggle="collapse" data-target="#collapseOne"
-                      aria-expanded="true" aria-controls="collapseOne">
-                + Yêu Cầu Sách
-              </button>
               <div class="form-row col-md-2">
                 <form action="${pageContext.request.contextPath}/home" method="POST">
                   <select name="catBook" class="form-control" required onchange="this.form.submit();">
@@ -44,21 +39,7 @@
                 </div>
               </form>
             </div>
-            <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne" data-parent="#accordionOne ">
-              <form class="form-row col-md">
-                <div class="col-md">
-                  <input class="form-control" type="text" placeholder=" Tiêu Đề Sách..." required="required">
-                </div>
-                <div class="col-md">
-                  <input class="form-control" type="text" placeholder=" Tác Giả..." required="required">
-                </div>
-                <div class="col-md-2">
-                  <button class="btn btn-light" type="submit">Gửi</button>
-                </div>
-              </form>
-            </div>
           </div>
-        </div> 
       </div>
       <div class="table-responsive">
         <table class="table table-hover">                    

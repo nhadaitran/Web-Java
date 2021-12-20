@@ -46,15 +46,7 @@ public class BooksController extends HttpServlet {
 
     try {
       switch (action) {
-//        case "/insert":
-//          insertBook(request, response);
-//          break;
-//        case "/delete":
-//          deleteBook(request, response);
-//          break;
-//        case "/update":
-//          updateBook(request, response);
-//          break;
+
         default:
           listBook(request, response);
           break;
@@ -83,16 +75,4 @@ public class BooksController extends HttpServlet {
     request.setAttribute("listCat", listCat);
     request.getRequestDispatcher("/user/home.jsp").forward(request, response);
   }
-
-//    private void updateBook(HttpServletRequest request, HttpServletResponse response)
-//          throws SQLException, IOException {
-//    int id = Integer.parseInt(request.getParameter("id"));
-//    String name = request.getParameter("name");
-//    String email = request.getParameter("email");
-//    String country = request.getParameter("country");
-//
-//    Books user = new Books(id, name, email, country);
-//    userDao.updateUser(user);
-//    response.sendRedirect("list");
-//  }
 }

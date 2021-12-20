@@ -42,10 +42,8 @@
               </div>
             </a>
           </li>
-          <li class="dropdown-divider"></li>
-          <li class="dropdown-item"><a href="${pageContext.request.contextPath}/info.jsp"><i class="icon-wallet mr-2"></i>Tài Khoản</a></li>
-          <li class="dropdown-divider"></li>
-          <li class="dropdown-item"><i class="icon-settings mr-2"></i> Cài Đặt</li>
+<!--          <li class="dropdown-divider"></li>
+          <li class="dropdown-item"><a href="${pageContext.request.contextPath}/"><i class="icon-wallet mr-2"></i>Tài Khoản</a></li>          -->
           <li class="dropdown-divider"></li>
           <li class="dropdown-item"><a href="${pageContext.request.contextPath}/logout"><i class="icon-power mr-2"></i> Đăng Xuất</a></li>
         </ul>

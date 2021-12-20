@@ -34,6 +34,7 @@ public class CategoriesDAO {
     Query query = session.createQuery("From Category");
     catList = query.list();
     session.beginTransaction().commit();
+    session.close();
     return catList;
   }
 

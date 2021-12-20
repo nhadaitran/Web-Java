@@ -31,11 +31,9 @@
                     </div>
                     <div class="row">
                       <div class="col-md-8">
-                        <h6>Thể loại</h6>
-                        <a href="javascript:void();" class="badge badge-dark badge-pill"><c:out value="${detail.category.cname}"/></a>                        
                         <hr>
-                        <span class="badge badge-primary"><i class="fa fa-user"></i> 120 Followers</span>                                                    
-                        <span class="badge badge-danger"><i class="fa fa-eye"></i> 245 Views</span>
+                        <h6>Thể loại</h6>
+                        <span class="badge badge-dark badge-pill"><c:out value="${detail.category.cname}"/></span>                                                    
                         <hr>
                         <h6>Mô tả</h6>
                         <p>
@@ -51,7 +49,7 @@
                       <a class=" btn btn-light fa fa-long-arrow-left" href="${pageContext.request.contextPath}/home"><span>Quay lại</span></a>
                       <c:if test="${detail.status==0}">
                       <a class="btn btn-primary fa fa-check" href="${pageContext.request.contextPath}/book/issue?id=${detail.id}">Mượn sách</a>                                                    
-                      <a class="btn btn-danger fa fa-flag" href="#"></a>
+                      <a class="btn btn-danger fa fa-pencil-square-o" href="${pageContext.request.contextPath}/book/update?id=${detail.id}"></a>
                       </c:if>
                       <c:if test="${detail.status==1}">
                         <a class="btn btn-success fa fa-check" href="${pageContext.request.contextPath}/book/return?id=${detail.id}&iis=${iis}">Trả sách</a>
