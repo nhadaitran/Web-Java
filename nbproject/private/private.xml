@@ -3,14 +3,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/D:/Program/Java/LibSystem/web/user/home.jsp</file>
             <file>file:/D:/Program/Java/LibSystem/src/java/controller/user/BooksController.java</file>
-            <file>file:/D:/Program/Java/LibSystem/src/java/controller/user/BookDetailController.java</file>
+            <file>file:/D:/Program/Java/LibSystem/web/assets/css/icons.css</file>
             <file>file:/D:/Program/Java/LibSystem/src/java/controller/user/RegisterController.java</file>
-            <file>file:/D:/Program/Java/LibSystem/src/java/dao/BooksDAO.java</file>
+            <file>file:/D:/Program/Java/LibSystem/web/user/masterpage/findbook.jsp</file>
             <file>file:/D:/Program/Java/LibSystem/src/java/dao/IssuesDAO.java</file>
             <file>file:/D:/Program/Java/LibSystem/web/user/masterpage/footer.jsp</file>
             <file>file:/D:/Program/Java/LibSystem/web/user/login.jsp</file>
             <file>file:/D:/Program/Java/LibSystem/web/user/register.jsp</file>
+            <file>file:/D:/Program/Java/LibSystem/src/java/controller/user/BookDetailController.java</file>
+            <file>file:/D:/Program/Java/LibSystem/web/user/masterpage/menutop.jsp</file>
+            <file>file:/D:/Program/Java/LibSystem/src/java/dao/BooksDAO.java</file>
+            <file>file:/D:/Program/Java/LibSystem/web/homepage.jsp</file>
+            <file>file:/D:/Program/Java/LibSystem/web/user/masterpage/header.jsp</file>
+            <file>file:/D:/Program/Java/LibSystem/nbproject/build-impl.xml</file>
+            <file>file:/D:/Program/Java/LibSystem/web/WEB-INF/web.xml</file>
         </group>
     </open-files>
 </project-private>
