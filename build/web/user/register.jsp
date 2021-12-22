@@ -37,7 +37,7 @@
               <div class="form-group">
                 <label class="sr-only">Mật Khẩu</label>
                 <div class="position-relative has-icon-right">
-                  <input type="text" name="password" class="form-control input-shadow" placeholder="Nhập Mật Khẩu" required="">
+                  <input type="password" name="password" class="form-control input-shadow" placeholder="Nhập Mật Khẩu" required="">
                   <div class="form-control-position">
                     <i class="icon-lock"></i>
                   </div>
